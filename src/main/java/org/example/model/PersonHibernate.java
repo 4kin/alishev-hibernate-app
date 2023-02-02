@@ -1,27 +1,45 @@
 package org.example.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "Person")
-public class Person {
+public class PersonHibernate {
 
     @Id
     @Column(name ="id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
     @Column(name = "name", length = 100)
     private String name;
     @Column(name = "age")
     private Integer age;
 
+    @OneToMany(mappedBy = "person")
+    private Set<ItemHibernate> items = new LinkedHashSet<>();
+
+    public PersonHibernate(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public PersonHibernate() {
+    }
+
+    public Set<ItemHibernate> getItems() {
+        return items;
+    }
+
+
     public Integer getAge() {
         return age;
     }
 
-    public Person() {
+    public void setItems(Set<ItemHibernate> items) {
+        this.items = items;
     }
 
     public void setAge(Integer age) {
