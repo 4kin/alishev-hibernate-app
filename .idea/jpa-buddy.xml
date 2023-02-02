@@ -3,6 +3,7 @@
   <component name="JpaBuddyIdeaProjectConfig">
     <option name="defaultUnitInitialized" value="true" />
     <option name="renamerInitialized" value="true" />
+    <option name="snapshotDbValue" value="2817433b-9399-455c-8923-8cb2beba21a5" />
     <option name="reverseEngineeringLastDbConnectionId" value="2817433b-9399-455c-8923-8cb2beba21a5" />
     <option name="reLastEntityCreationPackage" value="src/main/java/org/example/model" />
   </component>
